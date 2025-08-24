@@ -15,6 +15,7 @@
         html {
             font-size: 16px;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -26,14 +27,17 @@
 
         .header {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
             background: linear-gradient(45deg, #64b5f6, #42a5f5);
             -webkit-background-clip: text;
@@ -43,7 +47,7 @@
 
         .header p {
             color: #b8b8b8;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .back-link {
@@ -72,10 +76,50 @@
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
         }
 
+        .trip-section {
+            margin: 4rem 0;
+            padding: 0 2rem;
+        }
+
+        .trip-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .trip-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #64b5f6, #42a5f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+        }
+
+        .trip-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trip-count, .trip-date {
+            background: rgba(100, 181, 246, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            border: 1px solid rgba(100, 181, 246, 0.3);
+            font-size: 0.9rem;
+            color: #64b5f6;
+        }
+
         .gallery {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
@@ -166,9 +210,9 @@
             color: #64b5f6;
         }
 
-        .loading {
+        .no-trips {
             text-align: center;
-            padding: 2rem;
+            padding: 4rem 2rem;
             color: #b8b8b8;
         }
 
@@ -177,10 +221,17 @@
                 font-size: 2rem;
             }
             
+            .trip-title {
+                font-size: 2rem;
+            }
+            
             .gallery {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                 gap: 1rem;
-                padding: 1rem;
+            }
+            
+            .trip-section {
+                padding: 0 1rem;
             }
             
             .back-link {
@@ -195,6 +246,11 @@
             .gallery {
                 grid-template-columns: 1fr;
             }
+            
+            .trip-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -205,13 +261,555 @@
     </a>
 
     <div class="header">
-        <h1>Danang Vietnam 2025</h1>
-        <p>Exploring the beautiful coastal city of Danang, Vietnam</p>
+        <h1>Travel</h1>
+        <p>My adventures around the world</p>
     </div>
 
-    <div class="gallery" id="gallery">
-        <div class="loading">Loading images...</div>
-    </div>
+    
+    <section class="trip-section" id="2025-03-thailand">
+        <div class="trip-header">
+            <h2 class="trip-title">March 2025, Thailand</h2>
+            <div class="trip-meta">
+                <span class="trip-count">1 photos</span>
+            </div>
+        </div>
+        <div class="gallery">
+            
+        <div class="image-container">
+            <img src="/public/travel/2025-03-thailand/IMG_20250809_115113.jpg" alt="March 2025, Thailand - IMG_20250809_115113.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Saturday, August 9, 2025 at 11:51 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=4.117649999999999,102.53758888888889" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="trip-section" id="2025-08-danang-vietnam">
+        <div class="trip-header">
+            <h2 class="trip-title">August 2025, Danang Vietnam</h2>
+            <div class="trip-meta">
+                <span class="trip-count">57 photos</span>
+            </div>
+        </div>
+        <div class="gallery">
+            
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250809_115113.jpg" alt="August 2025, Danang Vietnam - IMG_20250809_115113.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Saturday, August 9, 2025 at 11:51 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=4.117649999999999,102.53758888888889" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250809_123136.jpg" alt="August 2025, Danang Vietnam - IMG_20250809_123136.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Saturday, August 9, 2025 at 12:31 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=14.95136111111111,107.8147" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250809_123211.jpg" alt="August 2025, Danang Vietnam - IMG_20250809_123211.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Saturday, August 9, 2025 at 12:32 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=14.993180555555554,107.82217222222222" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250809_162257.jpg" alt="August 2025, Danang Vietnam - IMG_20250809_162257.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Saturday, August 9, 2025 at 04:22 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.055247222222224,108.24274444444444" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250810_105255.jpg" alt="August 2025, Danang Vietnam - IMG_20250810_105255.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Sunday, August 10, 2025 at 10:52 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.056586111111113,108.24456388888889" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250810_113455.jpg" alt="August 2025, Danang Vietnam - IMG_20250810_113455.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Sunday, August 10, 2025 at 11:34 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.100102777777778,108.27774722222222" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250810_114306.jpg" alt="August 2025, Danang Vietnam - IMG_20250810_114306.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Sunday, August 10, 2025 at 11:43 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.099894444444445,108.27846111111111" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250810_114314.jpg" alt="August 2025, Danang Vietnam - IMG_20250810_114314.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Sunday, August 10, 2025 at 11:43 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.099894444444445,108.27846111111111" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250810_115306.jpg" alt="August 2025, Danang Vietnam - IMG_20250810_115306.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Sunday, August 10, 2025 at 11:53 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.09936944444444,108.27652499999999" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250810_115444.jpg" alt="August 2025, Danang Vietnam - IMG_20250810_115444.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Sunday, August 10, 2025 at 11:54 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.09929722222222,108.27675833333333" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250811_081624.jpg" alt="August 2025, Danang Vietnam - IMG_20250811_081624.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 11, 2025 at 08:16 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.187077777777777,108.13104722222222" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250811_082210.jpg" alt="August 2025, Danang Vietnam - IMG_20250811_082210.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 11, 2025 at 08:22 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.187036111111112,108.13105555555555" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250811_083200.jpg" alt="August 2025, Danang Vietnam - IMG_20250811_083200.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 11, 2025 at 08:32 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.19398888888889,108.13134722222222" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250811_083204.jpg" alt="August 2025, Danang Vietnam - IMG_20250811_083204.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 11, 2025 at 08:32 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.19398888888889,108.13134722222222" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250811_084711.jpg" alt="August 2025, Danang Vietnam - IMG_20250811_084711.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 11, 2025 at 08:47 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.224505555555552,108.09309999999999" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250811_084727.jpg" alt="August 2025, Danang Vietnam - IMG_20250811_084727.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 11, 2025 at 08:47 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.224513888888886,108.093075" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250811_085600.jpg" alt="August 2025, Danang Vietnam - IMG_20250811_085600.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 11, 2025 at 08:56 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.221425,108.09203055555555" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250811_094657.jpg" alt="August 2025, Danang Vietnam - IMG_20250811_094657.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 11, 2025 at 09:46 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.297483333333336,107.92047222222223" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250811_192030.jpg" alt="August 2025, Danang Vietnam - IMG_20250811_192030.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 11, 2025 at 07:20 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.469849999999997,107.5919111111111" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_095807.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_095807.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 09:58 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.432530555555555,107.562825" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_104004.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_104004.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 10:40 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.399080555555557,107.59070555555554" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_104222.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_104222.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 10:42 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.398816666666665,107.59015277777777" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_125438.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_125438.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 12:54 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.356055555555557,107.51593333333334" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_125502.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_125502.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 12:55 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.356061111111114,107.51593333333334" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_125503.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_125503.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 12:55 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.356061111111114,107.51593333333334" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_135650.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_135650.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 01:56 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.30185277777778,107.33256666666666" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_135700.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_135700.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 01:57 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.30185277777778,107.33256666666666" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_135835.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_135835.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 01:58 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.301858333333335,107.33257222222223" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_151156.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_151156.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 03:11 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.236511111111113,107.27618055555556" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250812_164436.jpg" alt="August 2025, Danang Vietnam - IMG_20250812_164436.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Tuesday, August 12, 2025 at 04:44 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.263819444444444,107.238825" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_100633.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_100633.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:06 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.307191666666668,107.21628333333334" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_100754.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_100754.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:07 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.307397222222225,107.21654722222223" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_100939.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_100939.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:09 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.307866666666666,107.21712777777778" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_101213.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_101213.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:12 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.308675,107.21698055555555" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_101222.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_101222.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:12 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.30860277777778,107.21705" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_101421.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_101421.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:14 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.308769444444444,107.21683333333334" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_101817.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_101817.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:18 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.308691666666668,107.21696111111112" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_101838.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_101838.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:18 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.30869722222222,107.21695277777778" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_101856.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_101856.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:18 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.30869722222222,107.21695277777778" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_102530.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_102530.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:25 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.309094444444444,107.21690555555556" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_105651.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_105651.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:56 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.301944444444445,107.21155277777778" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_105657_1.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_105657_1.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 10:56 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.301944444444445,107.21155277777778" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250813_130718.jpg" alt="August 2025, Danang Vietnam - IMG_20250813_130718.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Wednesday, August 13, 2025 at 01:07 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.269969444444442,107.23459166666667" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250814_090304.jpg" alt="August 2025, Danang Vietnam - IMG_20250814_090304.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Thursday, August 14, 2025 at 09:03 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.263875,107.23889722222222" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250814_111008.jpg" alt="August 2025, Danang Vietnam - IMG_20250814_111008.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Thursday, August 14, 2025 at 11:10 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.10732777777778,107.43847222222223" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250814_111030.jpg" alt="August 2025, Danang Vietnam - IMG_20250814_111030.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Thursday, August 14, 2025 at 11:10 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.10736388888889,107.43841666666667" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250814_111058.jpg" alt="August 2025, Danang Vietnam - IMG_20250814_111058.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Thursday, August 14, 2025 at 11:10 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.10736388888889,107.43841666666667" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250814_114227.jpg" alt="August 2025, Danang Vietnam - IMG_20250814_114227.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Thursday, August 14, 2025 at 11:42 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.062783333333336,107.48435277777777" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250814_114233.jpg" alt="August 2025, Danang Vietnam - IMG_20250814_114233.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Thursday, August 14, 2025 at 11:42 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.062783333333336,107.48435277777777" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250814_175736.jpg" alt="August 2025, Danang Vietnam - IMG_20250814_175736.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Thursday, August 14, 2025 at 05:57 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=15.738988888888889,107.82613055555555" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250815_071140.jpg" alt="August 2025, Danang Vietnam - IMG_20250815_071140.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Friday, August 15, 2025 at 07:11 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=15.763919444444445,107.82950833333334" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250816_081240.jpg" alt="August 2025, Danang Vietnam - IMG_20250816_081240.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Saturday, August 16, 2025 at 08:12 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=15.589327777777779,108.55405833333333" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250816_083625.jpg" alt="August 2025, Danang Vietnam - IMG_20250816_083625.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Saturday, August 16, 2025 at 08:36 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=15.54148611111111,108.482875" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250816_132201.jpg" alt="August 2025, Danang Vietnam - IMG_20250816_132201.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Saturday, August 16, 2025 at 01:22 PM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=15.917966666666667,108.32909722222222" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250817_100600.jpg" alt="August 2025, Danang Vietnam - IMG_20250817_100600.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Sunday, August 17, 2025 at 10:06 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.074177777777777,108.18237500000001" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250818_094507.jpg" alt="August 2025, Danang Vietnam - IMG_20250818_094507.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 18, 2025 at 09:45 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.120097222222224,107.94804722222223" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/public/travel/2025-08-danang-vietnam/IMG_20250818_094546.jpg" alt="August 2025, Danang Vietnam - IMG_20250818_094546.jpg" loading="lazy">
+            <div class="image-info">
+                <p class="date">📅 Monday, August 18, 2025 at 09:45 AM</p>
+                <p class="camera">📷 iQOO iQOO 13</p>
+                <p class="location">📍 <a href="https://maps.google.com/?q=16.120158333333332,107.94811666666666" target="_blank">View on Map</a></p>
+                
+            </div>
+        </div>
+        </div>
+    </section>
 
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
@@ -219,127 +817,18 @@
     </div>
 
     <script>
-        const images = [
-            'IMG_20250810_114314.jpg',
-            'IMG_20250813_101213.jpg',
-            'IMG_20250813_105651.jpg',
-            'IMG_20250810_114306.jpg',
-            'IMG_20250811_085600.jpg',
-            'IMG_20250813_100633.jpg',
-            'IMG_20250813_100939.jpg',
-            'IMG_20250813_101222.jpg',
-            'IMG_20250813_101421.jpg',
-            'IMG_20250814_111030.jpg',
-            'IMG_20250814_111058.jpg',
-            'IMG_20250810_113455.jpg',
-            'IMG_20250810_115444.jpg',
-            'IMG_20250811_081624.jpg',
-            'IMG_20250811_082210.jpg',
-            'IMG_20250811_083200.jpg',
-            'IMG_20250811_083204.jpg',
-            'IMG_20250811_192030.jpg',
-            'IMG_20250812_125502.jpg',
-            'IMG_20250812_151156.jpg',
-            'IMG_20250813_101817.jpg',
-            'IMG_20250813_101856.jpg',
-            'IMG_20250813_102530.jpg',
-            'IMG_20250813_105657_1.jpg',
-            'IMG_20250814_114227.jpg',
-            'IMG_20250814_114233.jpg',
-            'IMG_20250815_071140.jpg',
-            'IMG_20250816_081240.jpg',
-            'IMG_20250816_083625.jpg',
-            'IMG_20250816_132201.jpg',
-            'IMG_20250818_094507.jpg',
-            'IMG_20250818_094546.jpg',
-            'IMG_20250809_115113.jpg',
-            'IMG_20250809_123136.jpg',
-            'IMG_20250810_105255.jpg',
-            'IMG_20250811_084711.jpg',
-            'IMG_20250811_084727.jpg',
-            'IMG_20250811_094657.jpg',
-            'IMG_20250812_095807.jpg',
-            'IMG_20250812_104004.jpg',
-            'IMG_20250812_125438.jpg',
-            'IMG_20250812_125503.jpg',
-            'IMG_20250812_135650.jpg',
-            'IMG_20250812_135700.jpg',
-            'IMG_20250812_135835.jpg',
-            'IMG_20250812_164436.jpg',
-            'IMG_20250813_100754.jpg',
-            'IMG_20250813_101838.jpg',
-            'IMG_20250813_130718.jpg',
-            'IMG_20250814_090304.jpg',
-            'IMG_20250814_111008.jpg',
-            'IMG_20250814_175736.jpg',
-            'IMG_20250817_100600.jpg',
-            'IMG_20250809_123211.jpg',
-            'IMG_20250809_162257.jpg',
-            'IMG_20250810_115306.jpg',
-            'IMG_20250812_104222.jpg'
-        ];
-
-        const gallery = document.getElementById('gallery');
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
         const closeBtn = document.querySelector('.close');
 
-        function formatDate(filename) {
-            const match = filename.match(/IMG_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})/);
-            if (match) {
-                const [, year, month, day, hour, minute, second] = match;
-                const date = new Date(year, month - 1, day, hour, minute, second);
-                return date.toLocaleDateString('en-US', {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                });
-            }
-            return 'Unknown date';
-        }
-
-        function createImageElement(imageName) {
-            const container = document.createElement('div');
-            container.className = 'image-container';
-            
-            const img = document.createElement('img');
-            img.src = `/public/danang-vienam-2025-08/${imageName}`;
-            img.alt = `Danang Vietnam - ${imageName}`;
-            img.loading = 'lazy';
-            
-            const info = document.createElement('div');
-            info.className = 'image-info';
-            
-            const title = document.createElement('h3');
-            title.textContent = 'Danang, Vietnam';
-            
-            const date = document.createElement('p');
-            date.textContent = formatDate(imageName);
-            
-            info.appendChild(title);
-            info.appendChild(date);
-            container.appendChild(img);
-            container.appendChild(info);
-            
-            container.addEventListener('click', () => {
+        document.addEventListener('click', (e) => {
+            const img = e.target.closest('.image-container')?.querySelector('img');
+            if (img) {
                 modal.style.display = 'block';
                 modalImg.src = img.src;
                 modalImg.alt = img.alt;
-            });
-            
-            return container;
-        }
-
-        function loadGallery() {
-            gallery.innerHTML = '';
-            images.forEach(imageName => {
-                const imageElement = createImageElement(imageName);
-                gallery.appendChild(imageElement);
-            });
-        }
+            }
+        });
 
         closeBtn.addEventListener('click', () => {
             modal.style.display = 'none';
@@ -356,8 +845,6 @@
                 modal.style.display = 'none';
             }
         });
-
-        loadGallery();
     </script>
 </body>
 
