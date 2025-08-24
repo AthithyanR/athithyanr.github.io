@@ -5,9 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athi's Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
         body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -18,18 +29,18 @@
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: #ffffff;
         }
-        
+
         main {
             max-width: 600px;
             width: 100%;
             animation: fadeInUp 0.8s ease-out;
         }
-        
+
         figure {
             margin: 0 auto 2rem auto;
             text-align: center;
         }
-        
+
         figure img {
             width: 200px;
             height: 200px;
@@ -40,39 +51,39 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         figure img:hover {
             transform: scale(1.05);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
-        
+
         figcaption p {
             margin: 0.5rem 0;
             font-size: 1.1rem;
         }
-        
+
         .role-caption {
             margin-bottom: 0;
             color: #b8b8b8;
             font-size: 1rem;
         }
-        
+
         .role-caption a {
             color: #64b5f6;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .role-caption a:hover {
             color: #42a5f5;
             text-decoration: underline;
         }
-        
+
         .wave {
             font-size: 1.2em;
             animation: wave 2s infinite;
         }
-        
+
         article {
             text-align: left;
             margin-top: 2rem;
@@ -83,48 +94,48 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
-        
+
         article p {
             margin: 1rem 0 0.5rem 0;
             font-weight: 600;
             color: #64b5f6;
             font-size: 1.1rem;
         }
-        
+
         article ul {
             margin: 0 0 1.5rem 0;
             padding-left: 1.5rem;
         }
-        
+
         article li {
             margin: 0.5rem 0;
             color: #e0e0e0;
             transition: color 0.3s ease;
         }
-        
+
         article li:hover {
             color: #ffffff;
         }
-        
+
         article a {
             color: #64b5f6;
             text-decoration: none;
             transition: color 0.3s ease;
             font-weight: 500;
         }
-        
+
         article a:hover {
             color: #42a5f5;
             text-decoration: underline;
         }
-        
+
         footer {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             margin-top: 3rem;
         }
-        
+
         footer a {
             color: #b8b8b8;
             text-decoration: none;
@@ -132,40 +143,62 @@
             padding: 0.5rem;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
         }
-        
+
         footer a:hover {
             color: #64b5f6;
             background: rgba(100, 181, 246, 0.1);
             transform: translateY(-2px);
         }
-        
+
         footer svg {
             width: 24px;
             height: 24px;
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes wave {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(20deg); }
-            75% { transform: rotate(-10deg); }
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(20deg);
+            }
+
+            75% {
+                transform: rotate(-10deg);
+            }
         }
-        
+
         h1 {
             color: #ffffff;
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
+        }
+
+        .resume-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
     </style>
 </head>
@@ -188,75 +221,55 @@
                 </p>
             </figcaption>
         </figure>
-        
+
         <article>
             <p>Familiar technologies:</p>
             <ul>
-                <li>Next.js / React</li>
+                <li>Next.js / React / Vue</li>
                 <li>Node.js</li>
                 <li>Sql / No-Sql databases</li>
-                <li>AWS</li>
+                <li>AWS / Azure</li>
             </ul>
-            
+
             <p>Familiar languages:</p>
             <ul>
-                <li>Typescript</li>
+                <li>Typescript / Javascript</li>
+                <li>Java</li>
                 <li>Python</li>
                 <li>Golang</li>
             </ul>
-            
-            <p>Resume: <a href="/public/resume.pdf" target="_blank">Click to view</a></p>
+
+            <p>Resume:
+                <a href="/public/resume.pdf" target="_blank" aria-label="Resume" class="resume-link">
+                    📄
+                </a>
+            </p>
         </article>
     </main>
-    
+
     <footer>
         <a href="https://github.com/AthithyanR" target="_blank" aria-label="GitHub">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-github"
-            >
-                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.16 6.84 9.49.5.09.66-.22.66-.49v-1.71c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.61.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.92 0-1.09.39-1.99 1.03-2.7-.1-.26-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.03a9.49 9.49 0 0 1 5 0c1.9-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.66.64.71 1.03 1.61 1.03 2.7 0 3.82-2.35 4.66-4.58 4.91.36.31.68.92.68 1.86v2.76c0 .27.17.59.68.49A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-github">
+                <path
+                    d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.16 6.84 9.49.5.09.66-.22.66-.49v-1.71c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.61.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.92 0-1.09.39-1.99 1.03-2.7-.1-.26-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.03a9.49 9.49 0 0 1 5 0c1.9-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.66.64.71 1.03 1.61 1.03 2.7 0 3.82-2.35 4.66-4.58 4.91.36.31.68.92.68 1.86v2.76c0 .27.17.59.68.49A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z">
+                </path>
             </svg>
         </a>
         <a href="https://www.linkedin.com/in/athithyan-r-008991118/" target="_blank" aria-label="LinkedIn">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-linkedin"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-linkedin">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                 <rect x="2" y="9" width="4" height="12"></rect>
                 <circle cx="4" cy="4" r="2"></circle>
             </svg>
         </a>
         <a href="mailto:athithyanr4@gmail.com" aria-label="Email">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-mail"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-mail">
                 <path d="M4 4h16v16H4z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
