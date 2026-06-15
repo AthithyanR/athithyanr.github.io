@@ -4,9 +4,13 @@
   <%- include('../components/html-head', { title: 'Athithyan | Portfolio' }) %>
 </head>
 <body x-data>
+  <div id="particle-field"></div>
   <%- include('../components/nav') %>
   <main class="max-w-5xl mx-auto px-6 py-12">
-    <%- include('../components/hero') %>
+    <section class="relative">
+      <div id="hero-scene"></div>
+      <%- include('../components/hero') %>
+    </section>
 
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="md:col-span-2">

@@ -11,9 +11,11 @@
   </style>
 </head>
 <body x-data="travelAtlas">
+  <div id="particle-field"></div>
+
   <%- include('../components/nav') %>
 
-  <header class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+  <header class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
     <div>
       <h1 class="text-4xl font-bold mb-2">Travel <span class="accent-text">Atlas</span></h1>
       <p class="text-gray-400">A visual diary of wanderlust and discovery.</p>
@@ -33,14 +35,16 @@
     </template>
   </header>
 
-  <main class="max-w-7xl mx-auto px-6 pb-20">
+  <div id="travel-globe" x-show="activeTrip === null" x-transition.opacity.duration.500ms></div>
+
+  <main class="max-w-7xl mx-auto px-6 pb-20 relative z-10">
     <div x-show="loading" class="text-center text-gray-500 py-20">Loading adventures...</div>
     <div x-show="error" class="text-center text-red-500 py-20" x-text="'Error: ' + error"></div>
 
     <template x-if="!loading && !error && activeTrip === null">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <template x-for="trip in filteredTrips" :key="trip.id">
-          <div @click="loadTrip(trip.id)" class="glass rounded-3xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.02] group">
+          <div @click="selectTrip(trip.id)" class="glass rounded-3xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.02] group">
             <div class="h-64 overflow-hidden relative">
               <img :src="trip.coverPhoto" :alt="trip.title" loading="lazy" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -61,13 +65,20 @@
     </template>
 
     <template x-if="activeTrip !== null">
-      <div class="animate-in fade-in duration-500">
+      <div class="animate-in duration-500">
         <template x-if="currentTripData">
           <div class="mb-12 text-center">
             <h2 class="text-5xl font-bold mb-4" x-text="currentTripData.title"></h2>
             <p class="text-gray-400 text-xl max-w-3xl mx-auto" x-text="currentTripData.description"></p>
           </div>
         </template>
+
+        <div class="flex justify-end mb-6" x-show="currentTripData">
+          <button @click="openImmersiveView" class="px-5 py-2.5 accent-bg text-white rounded-full font-medium transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-[#6366f1]/20">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+            Immersive View
+          </button>
+        </div>
 
         <div class="masonry" x-show="currentTripData">
           <template x-for="(photo, index) in currentTripData?.photos" :key="index">
@@ -84,8 +95,10 @@
     </template>
   </main>
 
+  <div id="photo-viewer" class="hidden"></div>
+
   <template x-if="selectedPhoto">
-    <div class="fixed inset-0 z-50 lightbox-overlay flex items-center justify-center p-4 md:p-12"
+    <div class="fixed inset-0 z-40 lightbox-overlay flex items-center justify-center p-4 md:p-12"
          @keydown.escape.window="selectedPhoto = null"
          @click.self="selectedPhoto = null">
 

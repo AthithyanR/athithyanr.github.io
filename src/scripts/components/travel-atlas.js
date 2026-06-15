@@ -27,13 +27,22 @@ export default () => ({
         } else if (!h) {
           this.activeTrip = null;
           this.currentTripData = null;
+          if (window.__globe) window.__globe.resetHighlight();
         }
+      });
+
+      window.addEventListener('globe:trip-select', (e) => {
+        this.selectTrip(e.detail.id);
       });
     } catch (error) {
       console.error('Failed to fetch manifest:', error);
       this.error = error.message;
       this.loading = false;
     }
+  },
+  selectTrip(tripId) {
+    this.loadTrip(tripId);
+    if (window.__globe) window.__globe.highlightTrip(tripId);
   },
   async loadTrip(tripId) {
     this.activeTrip = tripId;
@@ -48,6 +57,10 @@ export default () => ({
       console.error('Failed to fetch trip data:', error);
       this.error = error.message;
     }
+  },
+  openImmersiveView() {
+    if (!this.currentTripData?.photos || !window.__photoViewer) return;
+    window.__photoViewer.show(this.currentTripData.photos);
   },
   get filteredTrips() {
     if (!this.manifest || this.manifest.length === 0) return [];
