@@ -38,7 +38,7 @@
         </template>
 
         <template x-if="activeTrip !== null">
-            <button @click="activeTrip = null" class="px-4 py-2 glass rounded-full font-medium hover:bg-gray-800 transition-colors flex items-center gap-2">
+            <button @click="activeTrip = null; window.location.hash = ''" class="px-4 py-2 glass rounded-full font-medium hover:bg-gray-800 transition-colors flex items-center gap-2">
                 <span>&larr;</span> Back to Explorer
             </button>
         </template>
@@ -151,6 +151,21 @@
                         const data = await response.json();
                         this.manifest = data.trips;
                         this.loading = false;
+
+                        const hash = window.location.hash.slice(1);
+                        if (hash && this.manifest.some(t => t.id === hash)) {
+                            this.loadTrip(hash);
+                        }
+
+                        window.addEventListener('hashchange', () => {
+                            const h = window.location.hash.slice(1);
+                            if (h && h !== this.activeTrip) {
+                                this.loadTrip(h);
+                            } else if (!h) {
+                                this.activeTrip = null;
+                                this.currentTripData = null;
+                            }
+                        });
                     } catch (error) {
                         console.error('Failed to fetch manifest:', error);
                         this.error = error.message;
@@ -165,6 +180,7 @@
                         const response = await fetch(url);
                         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                         this.currentTripData = await response.json();
+                        window.location.hash = tripId;
                     } catch (error) {
                         console.error('Failed to fetch trip data:', error);
                         this.error = error.message;
