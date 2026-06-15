@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../components/html-head', { title: 'Athithyan | Portfolio' }) %>
+</head>
+<body x-data>
+  <%- include('../components/nav') %>
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <%- include('../components/hero') %>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="md:col-span-2">
+        <%- include('../components/tech-stack') %>
+      </div>
+
+      <div class="glass p-8 rounded-3xl flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Experience</h3>
+          <p class="text-gray-400">Building scalable apps and exploring new frontiers in tech.</p>
+        </div>
+        <a href="/resume.pdf" target="_blank" class="mt-6 inline-block text-center py-3 accent-bg text-white rounded-xl font-medium transition-transform hover:scale-105">
+          Detailed Resume
+        </a>
+      </div>
+
+      <div class="md:col-span-3 glass p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center">
+        <div class="w-full md:w-1/3 h-48 rounded-2xl overflow-hidden relative group">
+          <img src="/travel/2025-08-danang-vietnam/IMG_20250809_115113.jpg" alt="Latest Trip" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        </div>
+        <div class="w-full md:w-2/3">
+          <h3 class="text-3xl font-bold mb-4">Travel Atlas</h3>
+          <p class="text-gray-400 mb-6">
+            A visual journey across different cultures and landscapes. From the bustling streets of Hanoi to the serene temples of Angkor.
+          </p>
+          <a href="/travel.html" class="inline-flex items-center gap-2 text-[#6366f1] font-bold hover:underline">
+            Enter the Atlas <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <%- include('../components/footer') %>
+</body>
+</html>

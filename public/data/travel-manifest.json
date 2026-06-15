@@ -1,0 +1,48 @@
+{
+  "trips": [
+    {
+      "id": "2023-06-hanoi-vietnam",
+      "title": "June 2023, Hanoi Vietnam",
+      "description": "",
+      "tags": [],
+      "coverPhoto": "/travel/2023-06-hanoi-vietnam/P_20230607_032711.jpg",
+      "photoCount": 21
+    },
+    {
+      "id": "2024-04-cambodia",
+      "title": "The Magic of Cambodia",
+      "description": "Exploring the ancient temples and vibrant markets of Cambodia.",
+      "tags": [
+        "Temples",
+        "Adventure"
+      ],
+      "coverPhoto": "/travel/2024-04-cambodia/20240404_193211.jpg",
+      "photoCount": 23
+    },
+    {
+      "id": "2024-09-saigon-vietnam",
+      "title": "September 2024, Saigon Vietnam",
+      "description": "",
+      "tags": [],
+      "coverPhoto": "/travel/2024-09-saigon-vietnam/IMG20240919012141.jpg",
+      "photoCount": 51
+    },
+    {
+      "id": "2025-03-thailand",
+      "title": "March 2025, Thailand",
+      "description": "",
+      "tags": [],
+      "coverPhoto": "/travel/2025-03-thailand/IMG20250308171024.jpg",
+      "photoCount": 20
+    },
+    {
+      "id": "2025-08-danang-vietnam",
+      "title": "August 2025, Danang Vietnam",
+      "description": "",
+      "tags": [],
+      "coverPhoto": "/travel/2025-08-danang-vietnam/IMG_20250809_115113.jpg",
+      "photoCount": 57
+    }
+  ],
+  "generatedAt": "2026-06-15T08:28:41.995Z"
+}
