@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.log
+public/css/style.css
+public/data/travel-manifest.json
+/index.html
+/travel.html
+/public/data/trips/
