@@ -7,7 +7,6 @@
     @media (min-width: 640px) { .masonry { column-count: 2; } }
     @media (min-width: 1024px) { .masonry { column-count: 3; } }
     .masonry-item { break-inside: avoid; margin-bottom: 1rem; }
-    .lightbox-overlay { background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(8px); }
   </style>
 </head>
 <body x-data="travelAtlas">
@@ -73,16 +72,9 @@
           </div>
         </template>
 
-        <div class="flex justify-end mb-6" x-show="currentTripData">
-          <button @click="openImmersiveView" class="px-5 py-2.5 accent-bg text-white rounded-full font-medium transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-[#6366f1]/20">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
-            Immersive View
-          </button>
-        </div>
-
         <div class="masonry" x-show="currentTripData">
           <template x-for="(photo, index) in currentTripData?.photos" :key="index">
-            <div @click="selectedPhoto = photo" class="masonry-item cursor-pointer relative group overflow-hidden rounded-2xl">
+            <div class="masonry-item relative group overflow-hidden rounded-2xl">
               <img :src="photo.url" :alt="`Photo ${index + 1}`" loading="lazy" class="w-full h-auto block transition-transform group-hover:scale-105 duration-500">
               <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                 <p class="text-xs text-white" x-text="photo.date ? new Date(photo.date).toLocaleDateString() : 'Unknown date'"></p>
@@ -94,43 +86,6 @@
       </div>
     </template>
   </main>
-
-  <div id="photo-viewer" class="hidden"></div>
-
-  <template x-if="selectedPhoto">
-    <div class="fixed inset-0 z-40 lightbox-overlay flex items-center justify-center p-4 md:p-12"
-         @keydown.escape.window="selectedPhoto = null"
-         @click.self="selectedPhoto = null">
-
-      <button @click="selectedPhoto = null" class="absolute top-6 right-6 text-white text-3xl hover:text-gray-400">&times;</button>
-
-      <div class="max-w-6xl w-full h-full flex flex-col md:flex-row gap-8">
-        <div class="flex-1 flex items-center justify-center overflow-hidden rounded-2xl">
-          <img :src="selectedPhoto.url" class="max-w-full max-h-full object-contain shadow-2xl">
-        </div>
-
-        <div class="w-full md:w-80 glass p-8 rounded-3xl flex flex-col gap-6">
-          <div>
-            <h4 class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-2">Date</h4>
-            <p class="text-lg" x-text="selectedPhoto.date ? new Date(selectedPhoto.date).toLocaleString() : 'Unknown date'"></p>
-          </div>
-          <div>
-            <h4 class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-2">Camera</h4>
-            <p class="text-lg" x-text="selectedPhoto.camera || 'Unknown camera'"></p>
-          </div>
-          <template x-if="selectedPhoto.lat && selectedPhoto.lng">
-            <div>
-              <h4 class="text-gray-500 text-xs uppercase font-bold tracking-widest mb-2">Location</h4>
-              <a :href="`https://maps.google.com/?q=${selectedPhoto.lat},${selectedPhoto.lng}`" target="_blank"
-                 class="inline-flex items-center gap-2 text-[#6366f1] hover:underline">
-                 <span>📍</span> Open in Maps
-              </a>
-            </div>
-          </template>
-        </div>
-      </div>
-    </div>
-  </template>
 
   <%- include('../components/footer') %>
 </body>

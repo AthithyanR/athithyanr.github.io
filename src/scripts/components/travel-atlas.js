@@ -2,7 +2,6 @@ export default () => ({
   manifest: [],
   currentTripData: null,
   activeTrip: null,
-  selectedPhoto: null,
   searchQuery: '',
   loading: true,
   error: null,
@@ -57,10 +56,6 @@ export default () => ({
       console.error('Failed to fetch trip data:', error);
       this.error = error.message;
     }
-  },
-  openImmersiveView() {
-    if (!this.currentTripData?.photos || !window.__photoViewer) return;
-    window.__photoViewer.show(this.currentTripData.photos);
   },
   get filteredTrips() {
     if (!this.manifest || this.manifest.length === 0) return [];

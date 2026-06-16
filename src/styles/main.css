@@ -50,30 +50,15 @@
 
 #travel-globe {
   width: 100%;
-  height: 50vh;
-  min-height: 300px;
-  max-height: 500px;
+  height: 65vh;
+  min-height: 350px;
+  max-height: 700px;
   position: relative;
 }
 #travel-globe canvas {
   display: block;
   width: 100%;
   height: 100%;
-}
-
-#photo-viewer {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  background: #000;
-}
-#photo-viewer canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-#photo-viewer.hidden {
-  display: none;
 }
 
 .animate-in {
